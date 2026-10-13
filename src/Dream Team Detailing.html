@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream Team Detailing HTX — Houston Mobile Auto Detailing</title>
+<meta name="ext-resource-dependency" content="../assets/hou-dusk.jpg" data-resource-id="heroBg" />
+<meta name="ext-resource-dependency" content="../assets/hou-pano.jpg" data-resource-id="procBg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0c; --ink2:#121214; --ink3:#1b1b1e; --line:rgba(255,255,255,.1);
+  --paper:#f3f1ee; --mute:#9a9893; --red:oklch(0.6 0.22 27); --red2:oklch(0.52 0.2 27);
+  --navy:oklch(0.48 0.16 262);
+  --disp:'Big Shoulders Display',Impact,sans-serif; --body:'Archivo',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+.star{display:inline-block;width:1em;height:1em;background:currentColor;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,11,12,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;height:76px;gap:40px}
+.logo{display:flex;align-items:center;gap:12px;line-height:.85}
+.logo .badge{width:42px;height:42px;background:var(--red);display:grid;place-items:center;clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%)}
+.logo .badge .star{color:#fff;font-size:20px;margin-top:-4px}
+.logo b{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:.02em;display:block}
+.logo small{font-family:var(--mono);font-size:9.5px;letter-spacing:.3em;color:var(--mute)}
+.nav ul{display:flex;gap:30px;list-style:none;margin-left:auto}
+.nav ul a{font-size:14px;font-weight:500;color:#cfcdc8;transition:color .2s}
+.nav ul a:hover{color:#fff}
+.nav .phone{font-family:var(--mono);font-size:13px;color:#cfcdc8}
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;font-family:var(--disp);font-weight:800;font-size:17px;letter-spacing:.06em;text-transform:uppercase;transition:transform .2s,background .2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red2)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{border-color:#fff}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:center 30%/cover;filter:grayscale(1) contrast(1.15) brightness(.55);transform:scale(1.08)}
+.hero-bg::after{content:"";position:absolute;inset:0}
+.hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.2) 35%,rgba(11,11,12,.92) 78%,var(--ink) 100%),linear-gradient(90deg,rgba(11,11,12,.9),transparent 70%)}
+.hero-red{position:absolute;inset:0;background:var(--red);mix-blend-mode:multiply;opacity:.35}
+.hero .wrap{position:relative;width:100%;padding-top:140px;padding-bottom:40px}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#d8d6d1;margin-bottom:26px}
+.eyebrow .star{color:var(--red);font-size:13px}
+.eyebrow i{width:48px;height:1px;background:rgba(255,255,255,.4)}
+h1{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(64px,10.6vw,176px);line-height:.84;letter-spacing:-.005em}
+h1 .out{color:transparent;-webkit-text-stroke:2px var(--paper)}
+h1 .r{color:var(--red)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:end;margin-top:40px}
+.hero-row p{max-width:480px;color:#c9c7c2;font-size:17px}
+.hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.plates{display:flex;gap:12px}
+.plate{width:168px;background:var(--ink2);border:1px solid var(--line);padding:6px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.plate:hover{transform:translateY(-8px)}
+.plate img{width:100%;aspect-ratio:1;object-fit:cover}
+.plate span{display:flex;justify-content:space-between;padding:8px 4px 2px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.ticker{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(11,11,12,.6);overflow:hidden;white-space:nowrap}
+.ticker-in{display:inline-flex;animation:tick 38s linear infinite;padding:16px 0}
+.ticker-in span{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:.06em;text-transform:uppercase;padding:0 26px;display:flex;align-items:center;gap:52px}
+.ticker-in span .star{color:var(--red);font-size:12px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* SECTION BASICS */
+section{position:relative}
+.sec{padding:140px 0}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:64px;align-items:start}
+.sec-head .idx{color:var(--red);padding-top:12px}
+h2{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(48px,6.4vw,104px);line-height:.88}
+h2 em{font-style:normal;color:var(--red)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* MANIFESTO */
+.mani{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:center}
+.mani blockquote{font-family:var(--disp);font-weight:800;font-size:clamp(38px,4.4vw,68px);line-height:.98;text-transform:uppercase;text-wrap:balance}
+.mani blockquote span{color:var(--mute)}
+.mani-body{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px;color:#bdbbb6;max-width:640px}
+.mani-body p{font-size:15px}
+.mani-body b{color:var(--paper);font-weight:600}
+.mani-img{position:relative}
+.mani-img img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:contrast(1.05) saturate(.9)}
+.mani-img figcaption{position:absolute;left:-1px;bottom:-1px;background:var(--ink);padding:14px 18px 0 0;color:var(--mute)}
+.mani-img::before{content:"";position:absolute;top:-14px;right:-14px;width:90px;height:90px;border-top:2px solid var(--red);border-right:2px solid var(--red)}
+
+/* SERVICES */
+.svc{background:var(--paper);color:var(--ink)}
+.svc .sec-head .idx{color:var(--red)}
+.svc-grid{display:grid;grid-template-columns:minmax(320px,.9fr) 1.3fr;border-top:2px solid var(--ink)}
+.svc-list{border-right:1px solid rgba(0,0,0,.15)}
+.svc-item{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;width:100%;text-align:left;padding:22px 24px 22px 0;border-bottom:1px solid rgba(0,0,0,.15);transition:padding .3s,background .3s;position:relative}
+.svc-item .n{font-family:var(--mono);font-size:12px;color:#8a8780}
+.svc-item .t{font-family:var(--disp);font-weight:800;font-size:30px;text-transform:uppercase;line-height:1}
+.svc-item .p{font-family:var(--mono);font-size:13px;color:#57544e}
+.svc-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--ink);transition:width .35s cubic-bezier(.2,.8,.2,1);z-index:0}
+.svc-item>*{position:relative;z-index:1}
+.svc-item:hover{padding-left:12px}
+.svc-item.on{padding-left:20px;color:#fff}
+.svc-item.on::before{width:100%}
+.svc-item.on .n,.svc-item.on .p{color:#fff}
+.svc-item.on .n{color:var(--red)}
+.svc-detail{padding:40px 0 40px 56px;display:flex;flex-direction:column;min-height:560px}
+.svc-detail .tag{display:flex;gap:10px;align-items:center;color:#6f6c66}
+.svc-detail .tag .star{color:var(--navy);font-size:14px}
+.svc-detail h3{font-family:var(--disp);font-weight:900;font-size:clamp(56px,6vw,96px);text-transform:uppercase;line-height:.86;margin:18px 0 26px}
+.price{display:flex;align-items:baseline;gap:14px;padding:22px 0;border-top:1px solid rgba(0,0,0,.15);border-bottom:1px solid rgba(0,0,0,.15)}
+.price b{font-family:var(--disp);font-weight:900;font-size:72px;line-height:1;letter-spacing:-.01em}
+.price b sup{font-size:.45em;vertical-align:.9em;margin-right:2px}
+.price span{color:#6f6c66;max-width:220px;font-size:13px;line-height:1.4}
+.incl{margin-top:28px}
+.incl .mono{color:#6f6c66;margin-bottom:14px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 14px;border:1px solid rgba(0,0,0,.2);font-size:14px;font-weight:500;opacity:0;transform:translateY(8px);animation:chip .45s forwards}
+.chip.hi{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.hi::before{content:"+ ";color:var(--red)}
+@keyframes chip{to{opacity:1;transform:none}}
+.svc-detail .act{margin-top:auto;padding-top:36px;display:flex;gap:12px;align-items:center}
+.svc-detail .act .btn-ghost{border-color:rgba(0,0,0,.3);color:var(--ink)}
+.addons{margin-top:90px;display:grid;grid-template-columns:200px 1fr;gap:40px}
+.addon-row{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid rgba(0,0,0,.18)}
+.addon{padding:22px 18px 22px 0;border-right:1px solid rgba(0,0,0,.12)}
+.addon:last-child{border-right:0}
+.addon b{display:block;font-family:var(--disp);font-weight:800;font-size:24px;text-transform:uppercase;line-height:1;margin-bottom:8px}
+.addon small{color:#6f6c66;font-size:13px}
+
+/* BEFORE AFTER */
+.ba{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.ba-frame{position:relative;aspect-ratio:1/1;overflow:hidden;user-select:none;cursor:ew-resize;background:#000}
+.ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-frame .after{clip-path:inset(0 0 0 50%)}
+.ba-frame .after img{object-position:center 60%}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px)}
+.ba-handle::after{content:"◂ ▸";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:13px;letter-spacing:.1em;color:#fff}
+.ba-lab{position:absolute;top:18px;padding:6px 10px;background:rgba(11,11,12,.8);z-index:2}
+.ba-lab.l{left:18px}.ba-lab.r{right:18px;background:var(--red)}
+.ba-copy p{color:#bdbbb6;margin-top:28px;max-width:440px}
+.ba-note{margin-top:22px;color:var(--mute)}
+.ba-stats{display:grid;grid-template-columns:1fr 1fr;margin-top:44px;border-top:1px solid var(--line)}
+.ba-stats div{padding:22px 0;border-bottom:1px solid var(--line)}
+.ba-stats div:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
+.ba-stats div:nth-child(even){padding-left:24px}
+.ba-stats b{font-family:var(--disp);font-weight:800;font-size:24px;text-transform:uppercase;display:block;line-height:1.05}
+.ba-stats small{color:var(--mute);font-size:13px}
+
+/* PROCESS */
+.proc{background:var(--ink2);overflow:hidden}
+.proc-bg{position:absolute;inset:0;background:center bottom/cover;opacity:.22;filter:grayscale(.3)}
+.proc-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink2) 10%,transparent 60%,var(--ink2))}
+.proc .wrap{position:relative}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{padding:34px 28px 40px 0;border-top:1px solid rgba(255,255,255,.25);position:relative}
+.step::before{content:"";position:absolute;top:-1px;left:0;height:2px;width:0;background:var(--red);transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.step.in::before{width:100%}
+.step .mono{color:var(--red)}
+.step h4{font-family:var(--disp);font-weight:800;font-size:38px;text-transform:uppercase;line-height:.95;margin:16px 0 14px}
+.step p{color:#bdbbb6;font-size:15px;max-width:270px}
+.where{margin-top:90px;display:flex;gap:0;border:1px solid var(--line);background:rgba(11,11,12,.6);backdrop-filter:blur(6px)}
+.where div{flex:1;padding:26px 28px;border-right:1px solid var(--line)}
+.where div:last-child{border-right:0}
+.where .mono{color:var(--mute);display:block;margin-bottom:6px}
+.where b{font-family:var(--disp);font-weight:800;font-size:28px;text-transform:uppercase}
+
+/* LINEUP */
+.lineup-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.lineup-ctrl{display:flex;gap:8px}
+.lineup-ctrl button{width:54px;height:54px;border:1px solid rgba(255,255,255,.25);font-size:20px;transition:background .2s}
+.lineup-ctrl button:hover{background:var(--red);border-color:var(--red)}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 40px 20px calc((100vw - 1360px)/2 + 40px);scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.car{flex:0 0 360px;scroll-snap-align:start;position:relative}
+.car .ph{aspect-ratio:1;overflow:hidden;background:#000}
+.car img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s;filter:saturate(.95)}
+.car:hover img{transform:scale(1.05);filter:saturate(1.15)}
+.car .meta{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:14px}
+.car .meta b{font-family:var(--disp);font-weight:800;font-size:26px;text-transform:uppercase}
+.car .meta .mono{color:var(--mute)}
+.car.yt .ph{position:relative}
+.car.yt .play{position:absolute;inset:0;display:grid;place-items:center}
+.car.yt .play i{width:74px;height:74px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-style:normal;font-size:22px;padding-left:4px;transition:transform .3s}
+.car.yt:hover .play i{transform:scale(1.1)}
+
+/* PRESS */
+.press{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.press .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;padding-top:110px;padding-bottom:110px;align-items:center}
+.press q{font-family:var(--disp);font-weight:800;font-size:clamp(40px,4.6vw,74px);line-height:.95;text-transform:uppercase;quotes:"“" "”";display:block;text-wrap:balance}
+.press q::before{color:var(--red)}
+.press cite{display:block;margin-top:26px;font-style:normal;color:var(--mute)}
+.press cite a{color:var(--paper);border-bottom:1px solid var(--red)}
+.scores{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}
+.score{padding:10px 24px;border-right:1px solid var(--line)}
+.score b{font-family:var(--disp);font-weight:900;font-size:64px;line-height:1;display:block}
+.score b small{font-size:.4em;color:var(--mute)}
+.score .mono{color:var(--mute)}
+.scores-note{grid-column:1/-1;padding:18px 24px 0;color:#6d6b67;font-size:12px}
+
+/* BOOK */
+.book{background:var(--red);color:#fff;overflow:hidden}
+.book .big-star{position:absolute;right:-120px;top:-80px;font-size:620px;color:rgba(0,0,0,.08)}
+.book-grid{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:80px}
+.book h2 em{color:var(--ink)}
+.book-side p{margin-top:28px;max-width:420px;font-size:17px;color:rgba(255,255,255,.9)}
+.contact-list{margin-top:44px;border-top:1px solid rgba(255,255,255,.35)}
+.contact-list a,.contact-list div{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+.contact-list .mono{opacity:.75}
+.contact-list b{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.02em}
+.contact-list a:hover b{text-decoration:underline;text-underline-offset:4px}
+.form{background:var(--ink);color:var(--paper);padding:40px}
+.form-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.prog{display:flex;gap:6px}
+.prog i{width:34px;height:3px;background:rgba(255,255,255,.18);transition:background .3s}
+.prog i.on{background:var(--red)}
+.fstep{display:none}
+.fstep.on{display:block;animation:fin .5s}
+@keyframes fin{from{opacity:0;transform:translateX(16px)}}
+.fstep h5{font-family:var(--disp);font-weight:800;font-size:34px;text-transform:uppercase;line-height:1;margin-bottom:22px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{border:1px solid rgba(255,255,255,.18);padding:16px 18px;text-align:left;transition:border-color .2s,background .2s;display:flex;flex-direction:column;gap:2px}
+.opt:hover{border-color:rgba(255,255,255,.5)}
+.opt.on{border-color:var(--red);background:rgba(227,38,47,.1)}
+.opt b{font-family:var(--disp);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1.05}
+.opt small{color:var(--mute);font-size:12.5px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fields label{display:flex;flex-direction:column;gap:6px}
+.fields label.full{grid-column:1/-1}
+.fields .mono{color:var(--mute);font-size:10.5px}
+.fields input,.fields select,.fields textarea{background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.25);color:var(--paper);font:inherit;font-size:16px;padding:10px 0;outline:none;transition:border-color .2s}
+.fields input:focus,.fields textarea:focus,.fields select:focus{border-color:var(--red)}
+.fields select option{background:var(--ink)}
+.fields textarea{resize:none;height:70px}
+.form-foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.est .mono{color:var(--mute);display:block}
+.est b{font-family:var(--disp);font-weight:900;font-size:36px}
+.form-nav{display:flex;gap:8px}
+.form-nav .back{height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.2);font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.done-msg{text-align:left}
+.done-msg p{color:#bdbbb6;margin-top:10px}
+.summary{margin-top:22px;border-top:1px solid var(--line)}
+.summary div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.summary span{color:var(--mute)}
+.send-row{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+
+/* FOOTER */
+footer{padding:90px 0 40px}
+.foot-word{font-family:var(--disp);font-weight:900;font-size:clamp(80px,17vw,280px);line-height:.8;text-transform:uppercase;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.22);white-space:nowrap}
+.foot-word span{color:var(--red);-webkit-text-stroke:0}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:70px;padding-top:36px;border-top:1px solid var(--line)}
+.foot-grid .mono{color:var(--mute);display:block;margin-bottom:14px}
+.foot-grid a,.foot-grid p{display:block;color:#cfcdc8;font-size:15px;margin-bottom:6px}
+.foot-grid a:hover{color:#fff}
+.foot-base{display:flex;justify-content:space-between;margin-top:60px;color:#6d6b67;font-size:12.5px}
+
+/* sticky mobile CTA */
+.mcta{display:none}
+
+@media (max-width:1100px){
+  .nav ul,.nav .phone{display:none}
+  .nav .wrap{justify-content:space-between}
+  .hero-row,.mani,.ba,.press .wrap,.book-grid,.svc-grid{grid-template-columns:1fr}
+  .plates{overflow-x:auto}
+  .sec-head,.addons{grid-template-columns:1fr;gap:16px}
+  .svc-list{border-right:0}
+  .svc-detail{padding:40px 0;min-height:0}
+  .addon-row{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:1fr 1fr}
+  .where{flex-direction:column}.where div{border-right:0;border-bottom:1px solid var(--line)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .track{padding-left:40px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .sec{padding:96px 0}
+  .plate{width:120px}
+  .mani-body,.opts,.fields{grid-template-columns:1fr}
+  .addon-row,.steps{grid-template-columns:1fr}
+  .car{flex-basis:78vw}
+  .track{padding-left:20px}
+  .form{padding:26px}
+  .scores{grid-template-columns:1fr 1fr 1fr}
+  .score{padding:10px 12px}.score b{font-size:44px}
+  .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:8px}
+  .mcta a{flex:1;justify-content:center}
+  .lineup-head{flex-direction:column;align-items:start}
+}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0b0b0c">
+  <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="600" fill="#0b0b0c"/><polygon points="340,220 460,220 460,330 400,360 340,330" fill="#e0313a"/><polygon points="400,245 409,272 437,272 414,288 423,315 400,298 377,315 386,288 363,272 391,272" fill="#fff"/></svg>
+</template>
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <span class="badge"><span class="star"></span></span>
+      <span><b>DREAM TEAM</b><small>DETAILING · HTX</small></span>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#lineup">The lineup</a></li>
+    </ul>
+    <a class="phone" href="tel:+14059338989">(405) 933-8989</a>
+    <a href="#book" class="btn btn-red">Get a quote <span class="arr">→</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" data-screen-label="Hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-red"></div>
+  <div class="hero-tint"></div>
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="star"></span>Houston’s #1 Mobile Detailing<i></i>Mon–Sat · 8AM–8PM</div>
+    <h1>Your driveway.<br><span class="out">Our detail</span> <span class="r">bay.</span></h1>
+    <div class="hero-row">
+      <div>
+        <p>Premium mobile auto detailing across Houston. Interior resets, full details, paint correction and ceramic coating — done at your home or while you’re at work.</p>
+        <div class="hero-cta">
+          <a href="#book" class="btn btn-red">Build your quote <span class="arr">→</span></a>
+          <a href="#services" class="btn btn-ghost">See the menu</a>
+        </div>
+      </div>
+      <div class="plates">
+        <a href="#lineup" class="plate"><img src="../assets/y2.jpg" alt="Black Porsche Panamera detailed by Dream Team"><span>Panamera <em>01</em></span></a>
+        <a href="#lineup" class="plate"><img src="../assets/y7.jpg" alt="Blue McLaren with doors up"><span>McLaren <em>02</em></span></a>
+        <a href="#lineup" class="plate"><img src="../assets/y3.jpg" alt="White Audi A5 Sportback"><span>Audi A5 <em>03</em></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="ticker"><div class="ticker-in" id="ticker"></div></div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="sec" data-screen-label="Manifesto">
+  <div class="wrap mani">
+    <div class="reveal">
+      <div class="eyebrow mono"><span class="star"></span>The Dream Team standard</div>
+      <blockquote>Your car is more than just a vehicle. <span>It’s an investment, a representation of your personality — and a way to express yourself on the road.</span></blockquote>
+      <div class="mani-body">
+        <p>That’s why we deliver <b>high-quality, affordable mobile detailing</b> that leaves your car looking and feeling like new — without you leaving your day behind.</p>
+        <p>Owner <b>Dequante</b> and the team are known for flexible scheduling, personal reminder calls and texts, and the patience to chase old stains, scuffs and tired headlights until they’re gone.</p>
+      </div>
+    </div>
+    <figure class="mani-img reveal">
+      <img src="../assets/y5.jpg" alt="Dream Team customers in their freshly detailed SUV">
+      <figcaption class="mono">Happy customers · Houston, TX</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec svc" id="services" data-screen-label="Services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx mono">01 / The menu</span>
+      <h2>Pick your <em>detail.</em></h2>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-list" id="svcList"></div>
+      <div class="svc-detail" id="svcDetail"></div>
+    </div>
+
+    <div class="addons reveal">
+      <span class="idx mono" style="color:var(--red);padding-top:22px">Specialties</span>
+      <div class="addon-row">
+        <div class="addon"><b>Paint correction</b><small>Swirls & scratches out</small></div>
+        <div class="addon"><b>Clay bar</b><small>Bonded grime off the paint</small></div>
+        <div class="addon"><b>Odor removal</b><small>Neutralized, not masked</small></div>
+        <div class="addon"><b>Steam cleaning</b><small>Deep interior sanitizing</small></div>
+        <div class="addon"><b>Headlight restore</b><small>Cloudy to clear</small></div>
+        <div class="addon"><b>Pet hair</b><small>Fur pulled from fabric</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="sec" id="results" data-screen-label="Results">
+  <div class="wrap ba">
+    <div class="ba-frame reveal" id="ba">
+      <img src="../assets/y4.jpg" alt="Interior as we found it">
+      <div class="after" id="baAfter" style="position:absolute;inset:0"><img src="../assets/y8.jpg" alt="Interior as we left it"></div>
+      <div class="ba-handle" id="baHandle"></div>
+      <span class="ba-lab l mono">How we find them</span>
+      <span class="ba-lab r mono">How we leave them</span>
+    </div>
+    <div class="ba-copy reveal">
+      <span class="mono" style="color:var(--red)">02 / Real jobs</span>
+      <h2 style="margin-top:18px">No interior <em>too far gone.</em></h2>
+      <p>Food, wrappers, kid chaos, pet hair, years of Houston humidity. We air-compress the hard-to-reach areas, steam, shampoo and condition until it feels like the day you drove it home.</p>
+      <div class="ba-note mono">↔ Drag to compare · real Dream Team jobs</div>
+      <div class="ba-stats">
+        <div><b>Air compress</b><small>Every seam & crevice</small></div>
+        <div><b>Steam + shampoo</b><small>Seats, carpet, headliner</small></div>
+        <div><b>Odor neutralizer</b><small>Fresh, not perfumed over</small></div>
+        <div><b>Fabric / leather</b><small>Protection applied</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec proc" id="process" data-screen-label="Process">
+  <div class="proc-bg"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx mono">03 / How it works</span>
+      <h2>We pull up.<br><em>You carry on.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="mono">Step 01</span><h4>Request a quote</h4><p>Tell us the vehicle, the package and where it’s parked. Takes about a minute below.</p></div>
+      <div class="step reveal"><span class="mono">Step 02</span><h4>Lock in a time</h4><p>Flexible scheduling Monday through Saturday, with personal reminder calls and texts before we arrive.</p></div>
+      <div class="step reveal"><span class="mono">Step 03</span><h4>We come to you</h4><p>Home driveway or the office parking lot — plenty of clients get detailed while they work.</p></div>
+      <div class="step reveal"><span class="mono">Step 04</span><h4>Walk the finish</h4><p>Climb in, breathe it in. Like-new, without ever leaving your day.</p></div>
+    </div>
+    <div class="where reveal">
+      <div><span class="mono">Service area</span><b>Greater Houston</b></div>
+      <div><span class="mono">Home base</span><b>Westheimer Rd · 77077</b></div>
+      <div><span class="mono">Hours</span><b>Mon–Sat 8AM–8PM</b></div>
+      <div><span class="mono">Sunday</span><b>Closed</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINEUP -->
+<section class="sec" id="lineup" data-screen-label="Lineup" style="padding-bottom:110px">
+  <div class="wrap lineup-head reveal">
+    <div>
+      <span class="mono" style="color:var(--red)">04 / The lineup</span>
+      <h2 style="margin-top:18px">Daily drivers<br>to <em>dream cars.</em></h2>
+    </div>
+    <div class="lineup-ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+  </div>
+  <div class="track" id="track">
+    <div class="car"><div class="ph"><img src="../assets/y7.jpg" alt="McLaren"></div><div class="meta"><b>McLaren</b><span class="mono">Exotic</span></div></div>
+    <div class="car"><div class="ph"><img src="../assets/y2.jpg" alt="Porsche Panamera"></div><div class="meta"><b>Porsche Panamera</b><span class="mono">Exterior</span></div></div>
+    <div class="car"><div class="ph"><img src="../assets/y6.jpg" alt="Dodge Charger"></div><div class="meta"><b>Dodge Charger</b><span class="mono">Exterior</span></div></div>
+    <div class="car"><div class="ph"><img src="../assets/y3.jpg" alt="Audi A5"></div><div class="meta"><b>Audi A5</b><span class="mono">Full detail</span></div></div>
+    <div class="car"><div class="ph"><img src="../assets/y8.jpg" alt="Truck interior" style="object-position:center 70%"></div><div class="meta"><b>Truck interior</b><span class="mono">Interior</span></div></div>
+    <a class="car yt" href="https://www.youtube.com/@dreamteamdetailingHTX/videos" target="_blank" rel="noopener"><div class="ph"><img src="../assets/yt.jpg" alt="Exotic Cars & Coffee video" style="object-position:center"><div class="play"><i>▶</i></div></div><div class="meta"><b>Exotic Cars & Coffee</b><span class="mono">Watch on YouTube</span></div></a>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press" data-screen-label="Press">
+  <div class="wrap">
+    <div class="reveal">
+      <q>To say we were impressed with his work would be an understatement.</q>
+      <cite class="mono">— <a href="https://www.htownbest.com/best-car-detailing-houston/" target="_blank" rel="noopener">HTownBest</a>, The Best Car Detailing in Houston</cite>
+    </div>
+    <div class="scores reveal">
+      <div class="score"><b>5<small>/5</small></b><span class="mono">Google</span></div>
+      <div class="score"><b>5<small>/5</small></b><span class="mono">Facebook</span></div>
+      <div class="score"><b>4.5<small>/5</small></b><span class="mono">Yelp</span></div>
+      <p class="scores-note">Review scores as reported by HTownBest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="sec book" id="book" data-screen-label="Book">
+  <span class="star big-star"></span>
+  <div class="wrap book-grid">
+    <div class="book-side reveal">
+      <span class="mono" style="opacity:.8">05 / Book</span>
+      <h2 style="margin-top:18px">Ready when<br><em>you are.</em></h2>
+      <p>Build a quote in four quick steps and we’ll confirm your price and time. Prefer to talk? Call or text the team directly.</p>
+      <div class="contact-list">
+        <a href="tel:+14059338989"><span class="mono">Call / text</span><b>(405) 933-8989</b></a>
+        <a href="mailto:dreamteamdetailing@icloud.com"><span class="mono">Email</span><b style="font-size:20px">dreamteamdetailing@icloud.com</b></a>
+        <a href="https://linktr.ee/dreamteamdetailing" target="_blank" rel="noopener"><span class="mono">Online booking</span><b>Book now ↗</b></a>
+      </div>
+    </div>
+
+    <div class="form reveal" id="form">
+      <div class="form-top">
+        <span class="mono" id="stepLab" style="color:var(--mute)">Step 1 of 4</span>
+        <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="fstep on" data-s="0">
+        <h5>What are we detailing?</h5>
+        <div class="opts" data-key="vehicle">
+          <button class="opt" data-v="Sedan / Coupe"><b>Sedan / Coupe</b><small>Cars, sports cars</small></button>
+          <button class="opt" data-v="SUV / Crossover"><b>SUV / Crossover</b><small>2 or 3 rows</small></button>
+          <button class="opt" data-v="Truck"><b>Truck</b><small>Cab & bed</small></button>
+          <button class="opt" data-v="Exotic / Luxury"><b>Exotic / Luxury</b><small>Extra-care finish</small></button>
+        </div>
+      </div>
+
+      <div class="fstep" data-s="1">
+        <h5>Choose a package</h5>
+        <div class="opts" data-key="pkg" id="pkgOpts"></div>
+      </div>
+
+      <div class="fstep" data-s="2">
+        <h5>Where & when?</h5>
+        <div class="opts" data-key="loc" style="margin-bottom:24px">
+          <button class="opt" data-v="At home"><b>At home</b><small>Driveway or garage</small></button>
+          <button class="opt" data-v="At work"><b>At work</b><small>Office parking lot</small></button>
+        </div>
+        <div class="fields">
+          <label><span class="mono">Preferred date</span><input type="date" id="fDate"></label>
+          <label><span class="mono">Time window</span><select id="fTime"><option>Morning (8–12)</option><option>Afternoon (12–4)</option><option>Evening (4–8)</option></select></label>
+          <label class="full"><span class="mono">Area / ZIP</span><input id="fZip" placeholder="e.g. 77077"></label>
+        </div>
+      </div>
+
+      <div class="fstep" data-s="3">
+        <h5>Your details</h5>
+        <div class="fields">
+          <label><span class="mono">Name</span><input id="fName" placeholder="Full name"></label>
+          <label><span class="mono">Phone</span><input id="fPhone" placeholder="(713) 000-0000"></label>
+          <label class="full"><span class="mono">Vehicle make / model</span><input id="fCar" placeholder="e.g. 2021 Tahoe"></label>
+          <label class="full"><span class="mono">Anything we should know?</span><textarea id="fNote" placeholder="Pet hair, stains, odors…"></textarea></label>
+        </div>
+      </div>
+
+      <div class="fstep" data-s="4">
+        <div class="done-msg">
+          <span class="mono" style="color:var(--red)">Quote ready</span>
+          <h5 style="margin-top:12px">Send it to the team.</h5>
+          <p>Your request is drafted below. Send it by text or email and we’ll confirm your final price and time.</p>
+          <div class="summary" id="summary"></div>
+          <div class="send-row">
+            <a class="btn btn-red" id="sendSms">Text it <span class="arr">→</span></a>
+            <a class="btn btn-ghost" id="sendMail">Email it</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-foot" id="formFoot">
+        <div class="est"><span class="mono">Estimated range</span><b id="est">—</b></div>
+        <div class="form-nav">
+          <button class="back" id="back">Back</button>
+          <button class="btn btn-red" id="nextStep">Next <span class="arr">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-screen-label="Footer">
+  <div class="wrap">
+    <div class="foot-word">Dream Team<span>.</span></div>
+    <div class="foot-grid">
+      <div><span class="mono">Dream Team Detailing HTX</span><p style="max-width:340px">Premium mobile auto detailing for Houston. Interior, exterior, paint correction & ceramic coating — at your home or work.</p></div>
+      <div><span class="mono">Contact</span><a href="tel:+14059338989">(405) 933-8989</a><a href="mailto:dreamteamdetailing@icloud.com">Email us</a><a href="#book">Get a quote</a></div>
+      <div><span class="mono">Hours</span><p>Mon–Sat 8AM–8PM</p><p>Sunday closed</p><p>Westheimer Rd, Houston 77077</p></div>
+      <div><span class="mono">Follow</span><a href="https://www.instagram.com/dreamteamdetailinghtx/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/DreamTeamDetailingHTX/" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.youtube.com/@dreamteamdetailingHTX/videos" target="_blank" rel="noopener">YouTube ↗</a></div>
+    </div>
+    <div class="foot-base"><span>© 2026 Dream Team Detailing HTX</span><span class="mono" style="font-size:10px">Houston, Texas <span class="star" style="color:var(--red)"></span></span></div>
+  </div>
+</footer>
+
+<div class="mcta"><a class="btn btn-ghost" style="background:var(--ink)" href="tel:+14059338989">Call</a><a class="btn btn-red" href="#book">Get a quote</a></div>
+
+<script>
+/* ---------- DATA (from Dream Team's published service menu) ---------- */
+const PKGS=[
+  {id:'io',name:'Interior-Only Detail',short:'Interior',lo:150,hi:250,tag:'Interior reset',
+   inc:['Full vacuum','Steam','Condition panels','Shampoo seats','Shampoo carpet','Headliner','Fabric / leather protection','Air freshener'],hi_:[]},
+  {id:'ioe',name:'Interior-Only Extended',short:'Interior Ext.',lo:275,hi:350,tag:'Deep interior',
+   inc:['Air compress hard-to-reach areas','Full vacuum','Steam','Condition panels','Shampoo seats & carpet','Headliner','Vents','Odor neutralizer','Air freshener','Fabric / leather protection','Pet hair / dirt removal'],hi_:['Odor neutralizer','Pet hair / dirt removal']},
+  {id:'mini',name:'Mini Detail',short:'Mini',lo:200,hi:300,tag:'Inside + out',star:true,
+   inc:['Air compress hard-to-reach areas','Full vacuum','Steam','Condition panels','Shampoo seats & carpet','Headliner','Vents','Air freshener','Hand wash','Towel dry','Spray wax','Windows','Wheels','Tire shine','Condition trim','Door jambs'],hi_:[]},
+  {id:'full',name:'Full Detail',short:'Full',lo:350,hi:450,tag:'The complete package',star:true,
+   inc:['Air compress hard-to-reach areas','Full vacuum','Steam','Condition panels','Shampoo seats & carpet','Headliner','Vents','Odor neutralizer','Air freshener','Fabric / leather protection','Hand wash','Towel dry','Crystal wax','Clay bar','Windows','Wheels','Tire shine','Condition trim','Door jambs','Engine bay cleaning','Pet hair'],hi_:['Odor neutralizer','Fabric / leather protection','Crystal wax']},
+  {id:'xfull',name:'Extended Full Detail',short:'Extended Full',lo:null,tag:'Maximum attention',
+   inc:['Our most thorough inside-and-out detail','Scope set to your vehicle’s condition'],hi_:[]},
+  {id:'pc',name:'Paint Correction + Ceramic Coating',short:'Paint + Ceramic',lo:null,tag:'Protect the finish',
+   inc:['Paint correction','Swirl & scratch reduction','Clay bar decontamination','Ceramic coating'],hi_:[]}
+];
+const money=p=>p.lo?`$${p.lo}–$${p.hi}`:'By quote';
+
+/* ---------- BG IMAGES ---------- */
+const R=window.__resources||{};
+document.getElementById('heroBg').style.backgroundImage=`url("${R.heroBg||'../assets/hou-dusk.jpg'}")`;
+document.querySelector('.proc-bg').style.backgroundImage=`url("${R.procBg||'../assets/hou-pano.jpg'}")`;
+
+/* ---------- TICKER ---------- */
+const tk=['Paint correction','Clay bar','Odor removal','Steam cleaning','Headlight restoration','Ceramic coating','Pet hair removal','Engine bay'];
+const tkHTML=tk.map(t=>`<span>${t}<i class="star"></i></span>`).join('');
+document.getElementById('ticker').innerHTML=tkHTML+tkHTML;
+
+/* ---------- NAV ---------- */
+const nav=document.getElementById('nav');
+const heroBg=document.getElementById('heroBg');
+addEventListener('scroll',()=>{
+  nav.classList.toggle('solid',scrollY>40);
+  if(scrollY<innerHeight) heroBg.style.transform=`scale(1.08) translateY(${scrollY*.18}px)`;
+},{passive:true});
+
+/* ---------- SERVICES ---------- */
+const list=document.getElementById('svcList'),det=document.getElementById('svcDetail');
+list.innerHTML=PKGS.map((p,i)=>`<button class="svc-item${i===3?' on':''}" data-i="${i}"><span class="n">0${i+1}</span><span class="t">${p.name}</span><span class="p">${money(p)}</span></button>`).join('');
+function showPkg(i){
+  const p=PKGS[i];
+  list.querySelectorAll('.svc-item').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
+  det.innerHTML=`
+    <div class="tag mono">${p.star?'<span class="star"></span>Most booked · ':''}${p.tag}</div>
+    <h3>${p.name}</h3>
+    <div class="price">${p.lo?`<b><sup>$</sup>${p.lo}<span style="color:#b7b3ab;font-size:.6em;padding:0 6px">—</span><sup>$</sup>${p.hi}</b><span>Final price confirmed by vehicle size & condition.</span>`:`<b>Quote</b><span>Priced to your vehicle and finish goals. Call or request below.</span>`}</div>
+    <div class="incl"><span class="mono">What’s included</span><div class="chips">${p.inc.map((c,k)=>`<span class="chip${p.hi_.includes(c)?' hi':''}" style="animation-delay:${k*25}ms">${c}</span>`).join('')}</div></div>
+    <div class="act"><a href="#book" class="btn btn-red" data-pick="${p.id}">Quote this package <span class="arr">→</span></a><a href="tel:+14059338989" class="btn btn-ghost">Call</a></div>`;
+  det.querySelector('[data-pick]').addEventListener('click',()=>preselect(p.id));
+}
+list.addEventListener('click',e=>{const b=e.target.closest('.svc-item');if(b)showPkg(+b.dataset.i)});
+showPkg(3);
+
+/* ---------- BEFORE/AFTER ---------- */
+const ba=document.getElementById('ba'),baA=document.getElementById('baAfter'),baH=document.getElementById('baHandle');
+let drag=false;
+function setBA(x){const r=ba.getBoundingClientRect();let p=Math.max(0,Math.min(1,(x-r.left)/r.width))*100;baA.style.clipPath=`inset(0 0 0 ${p}%)`;baH.style.left=p+'%'}
+ba.addEventListener('pointerdown',e=>{drag=true;ba.setPointerCapture(e.pointerId);setBA(e.clientX)});
+ba.addEventListener('pointermove',e=>{if(drag)setBA(e.clientX)});
+ba.addEventListener('pointerup',()=>drag=false);
+
+/* ---------- LINEUP ---------- */
+const track=document.getElementById('track');
+document.getElementById('prev').onclick=()=>track.scrollBy({left:-380,behavior:'smooth'});
+document.getElementById('next').onclick=()=>track.scrollBy({left:380,behavior:'smooth'});
+
+/* ---------- REVEAL ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(el.classList.contains('step')?[...el.parentNode.children].indexOf(el)*120:0)+'ms';io.observe(el)});
+
+/* ---------- QUOTE BUILDER ---------- */
+const state={vehicle:null,pkg:null,loc:null};
+const pkgOpts=document.getElementById('pkgOpts');
+pkgOpts.innerHTML=PKGS.map(p=>`<button class="opt" data-v="${p.id}"><b>${p.short}</b><small>${money(p)}</small></button>`).join('');
+let step=0;const steps=[...document.querySelectorAll('.fstep')];
+const prog=[...document.querySelectorAll('#prog i')],lab=document.getElementById('stepLab');
+const nextB=document.getElementById('nextStep'),backB=document.getElementById('back'),foot=document.getElementById('formFoot');
+document.querySelectorAll('.opts').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('.opt');if(!b)return;
+  g.querySelectorAll('.opt').forEach(o=>o.classList.toggle('on',o===b));
+  state[g.dataset.key]=b.dataset.v;updEst();
+  if(step<2) setTimeout(()=>go(step+1),260);
+}));
+function updEst(){const p=PKGS.find(x=>x.id===state.pkg);document.getElementById('est').textContent=p?money(p):'—'}
+function valid(){if(step===0)return!!state.vehicle;if(step===1)return!!state.pkg;if(step===2)return!!state.loc;if(step===3)return document.getElementById('fName').value.trim()&&document.getElementById('fPhone').value.trim();return true}
+function go(n){
+  step=n;steps.forEach((s,i)=>s.classList.toggle('on',i===n));
+  prog.forEach((p,i)=>p.classList.toggle('on',i<=Math.min(n,3)));
+  lab.textContent=n<4?`Step ${n+1} of 4`:'Complete';
+  backB.style.visibility=n===0?'hidden':'visible';
+  nextB.innerHTML=n===3?'Review <span class="arr">→</span>':'Next <span class="arr">→</span>';
+  foot.style.display=n===4?'none':'flex';
+  if(n===4)buildSummary();
+}
+nextB.onclick=()=>{if(!valid()){document.getElementById('form').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:260});return}go(step+1)};
+backB.onclick=()=>go(Math.max(0,step-1));
+function buildSummary(){
+  const p=PKGS.find(x=>x.id===state.pkg),v=id=>document.getElementById(id).value;
+  const rows=[['Vehicle',`${state.vehicle}${v('fCar')?' · '+v('fCar'):''}`],['Package',p.name],['Estimate',money(p)],['Location',`${state.loc}${v('fZip')?' · '+v('fZip'):''}`],['When',`${v('fDate')||'Flexible'} · ${v('fTime')}`],['Name',v('fName')],['Phone',v('fPhone')]];
+  if(v('fNote'))rows.push(['Notes',v('fNote')]);
+  document.getElementById('summary').innerHTML=rows.map(r=>`<div><span>${r[0]}</span><b style="font-weight:500;text-align:right">${r[1]}</b></div>`).join('');
+  const msg='Hi Dream Team! Quote request:\n'+rows.map(r=>`${r[0]}: ${r[1]}`).join('\n');
+  document.getElementById('sendSms').href='sms:+14059338989?&body='+encodeURIComponent(msg);
+  document.getElementById('sendMail').href='mailto:dreamteamdetailing@icloud.com?subject='+encodeURIComponent('Detailing quote — '+p.name)+'&body='+encodeURIComponent(msg);
+}
+function preselect(id){state.pkg=id;pkgOpts.querySelectorAll('.opt').forEach(o=>o.classList.toggle('on',o.dataset.v===id));updEst()}
+go(0);
+</script>
+</body>
+</html>
